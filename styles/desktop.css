@@ -1,0 +1,29 @@
+.notification-main {
+  font-size: 0.875rem;
+  padding: 32px;
+}
+.notification-header {
+  margin-bottom: 31px;
+}
+.title {
+  font-size: 1.5rem;
+}
+.notification-mark-all-read {
+  margin-left: auto;
+}
+.img-avatar {
+  width: 45px;
+  height: 45px;
+}
+.notification-item {
+  padding: 18px 20px;
+}
+.notification-body {
+  row-gap: 8px;
+}
+.notification-item-body {
+  margin-left: 19px;
+}
+.notification-message-preview {
+  width: calc(100% - 20px);
+}
