@@ -1,7 +1,9 @@
 <template>
   <main class="main">
-    <Button />
-    <Button expanded />
+    <Button variant="venus" label="venus" size="small" @click="onClick" />
+    <Button expanded>
+      <h1>Buenaaas</h1>
+    </Button>
   </main>
 </template>
 
@@ -11,6 +13,13 @@ export default {
   name: "HomeView",
   components: {
     Button,
+  },
+  setup() {
+    return {
+      onClick: (e) => {
+        console.log(e);
+      },
+    };
   },
 };
 </script>

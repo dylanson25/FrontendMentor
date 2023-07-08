@@ -1,0 +1,26 @@
+.btn
+    border: 1px solid rgba(255, 255, 255, .2)
+    background: unset
+    color: $white
+    font-weight: 700
+    letter-spacing: 2.571px
+    padding: 12px 28px
+    text-transform: uppercase
+    outline: 0
+    &.is-small
+        font-size: $fs-xss
+    &.is-medium
+        font-size: $fs-sm
+    &.is-expanded
+        width: 100%
+    &:hover
+        cursor: pointer
+        background-color: rgba($grey-lighter, .20000000298023224)
+    &:focus, &:focus-visible
+        border-color: transparent
+    @each $className, $object in $colors
+        &.is-#{$className}
+            &:focus, &:focus-visible
+                box-shadow: 0 0 0 0.125em rgba(map-get($object, 'color'), .25)
+            &:active
+                background-color: map-get($object, 'color')
