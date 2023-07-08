@@ -1,0 +1,30 @@
+@mixin media-breakpoint-up($breakpoint)
+    @if ($breakpoint == $br-xs)
+        @media (min-width:$br-xs)
+            @content
+    @else if ($breakpoint == $br-sm)
+        @media (min-width: $br-sm)
+            @content
+    @else if ($breakpoint == $br-md)
+        @media (min-width: $br-md)
+            @content
+    @else if ($breakpoint == $br-lg)
+        @media (min-width: $br-lg)
+            @content
+    @else
+        @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}"
+@mixin media-breakpoint-down($breakpoint)
+    @if ($breakpoint == $br-xs)
+        @media (max-width:$br-xs)
+            @content
+    @else if ($breakpoint == $br-sm)
+        @media (max-width: $br-sm)
+            @content
+    @else if ($breakpoint == $br-md)
+        @media (max-width: $br-md)
+            @content
+    @else if ($breakpoint == $br-lg)
+        @media (max-width: $br-lg)
+            @content
+    @else
+        @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}"

@@ -1,18 +1,24 @@
 <template>
   <main class="main">
-    <Button variant="venus" label="venus" size="small" @click="onClick" />
-    <Button expanded>
-      <h1>Buenaaas</h1>
-    </Button>
+    <InfoBox property="ROTATION TIME" value="58.6 days" />
+    <br />
+    <Button
+      variant="venus"
+      expanded
+      label="venus"
+      size="small"
+      @click="onClick"
+    />
   </main>
 </template>
 
 <script>
-import { Button } from "@/components";
+import { Button, InfoBox } from "@/components";
 export default {
   name: "HomeView",
   components: {
     Button,
+    InfoBox,
   },
   setup() {
     return {
@@ -25,9 +31,9 @@ export default {
 </script>
 <style lang="sass" scoped>
 .main
-  display: flex
-  justify-content: center
-  align-items: center
+  padding: 10px
+  // justify-content: center
+  // align-items: center
   min-height: 100vh
   width: 100%
 </style>
