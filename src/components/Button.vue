@@ -29,6 +29,7 @@ export default {
       ],
       default: "mercury",
     },
+    selected: { type: Boolean, default: false },
     size: { type: String, enum: ["medium", "small"], default: "medium" },
   },
   emits: ["click"],
@@ -39,6 +40,7 @@ export default {
         if (props.expanded) classes.push("is-expanded");
         if (props.size) classes.push(`is-${props.size}`);
         if (props.variant) classes.push(`is-${props.variant}`);
+        if (props.selected) classes.push(`is-selected`);
         return classes.join(" ");
       }),
       onClick: (e) => emit("click", e),
