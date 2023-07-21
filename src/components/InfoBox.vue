@@ -1,7 +1,7 @@
 <template>
   <div class="infobox">
-    <h4 class="infobox-title color-grey is-uppercas">{{ property }}</h4>
-    <p class="title-2">{{ value }}</p>
+    <h4 class="infobox-title color-grey is-uppercase">{{ property }}</h4>
+    <p class="title-2 is-text-right">{{ value }}</p>
   </div>
 </template>
 <script>
@@ -36,7 +36,9 @@ export default {
         align-items: flex-start
         .infobox-title
             font-size: $fs-xs
-    @include media-breakpoint-up($br-sm)
+        .title-2
+          text-align: left
+    @include media-breakpoint-up($br-md)
         padding: 20px 24px 27px
         .infobox-title
             line-height: 25px
