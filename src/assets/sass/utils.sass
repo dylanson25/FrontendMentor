@@ -1,15 +1,24 @@
 .title-1
     font-family: 'Antonio'
-    font-size: $fs-xl
-    line-height: 80px
     text-transform: uppercase
+    font-size: $fs-lg
+    line-height: normal
+    text-align: center
+    @include media-breakpoint-up($br-sm)
+        text-align: left
+        font-size: 48px
+        line-height: normal
+    @include media-breakpoint-up($br-md)
+    @include media-breakpoint-up($br-lg)
+        font-size: $fs-xl
+        line-height: 80px
 .title-2
     font-family: 'Antonio'
     font-size: $fs-lg
     letter-spacing: -1.5px
     line-height: 52px
     text-transform: uppercase
-    @include media-breakpoint-down($br-sm)
+    @include media-breakpoint-down($br-md)
         text-transform: uppercase
         line-height: normal
         letter-spacing: -0.9px
@@ -32,7 +41,38 @@
 .text
     line-height: 25px
     font-size: $fs-md
+.text-body
+    font-size: $fs-xs
+    line-height: 22px
+    margin-top: 16px
+    text-align: center
+    @include media-breakpoint-up($br-sm)
+        text-align: left
+        margin-top: 24px
+    @include media-breakpoint-up($br-md)
+        font-size: $fs-md
+.link-source
+    margin-top: 32px
+    font-size: $fs-sm
+    a
+        font-weight: 700
+        color: $color-grey
+        &::after
+            margin-left: 8px
+            vertical-align: middle
+            display: inline-block
+            background-image: url('../svg/icon-source.svg')
+            content: " "
+            width: 12px
+            height: 12px
+    @include media-breakpoint-up($br-lg)
+        font-size: $fs-md
+        margin-top: 24px
 .color-grey
     color: $color-grey
 .is-uppercase
     text-transform: uppercase
+.is-text-right
+    text-align: right
+.mt-auto
+    margin-top: auto
