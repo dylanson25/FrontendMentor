@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <main class="main">
     <Tabs
       class="planet-tabs"
@@ -65,13 +66,13 @@
 
 <script>
 import { ref, onBeforeMount, watch, toRefs, reactive, computed } from "vue";
-import { InfoBox, Button, Tabs } from "@/components";
+import { InfoBox, Button, Tabs, Navbar } from "@/components";
 import { useWidth } from "@/utils/useWidth";
 import { useRoute } from "vue-router";
 import dataPlanets from "@/utils/data.js";
 export default {
   name: "HomeView",
-  components: { InfoBox, Button, Tabs },
+  components: { InfoBox, Button, Tabs, Navbar },
   setup() {
     const planets = ref(dataPlanets);
     const currentPlanet = ref([]);
@@ -135,14 +136,15 @@ export default {
 .main
   display: grid
   position: relative
-  grid-template-rows: 304px repeat(2, auto)
+  grid-template-rows: minmax(304px, auto) repeat(2, auto)
   grid-template-columns: 100%
   min-height: 100vh
   padding: 24px
+  padding-top: 0
   place-content: center
   place-items: center
   row-gap: 27px
-  width: 100%
+  width: calc( 100% - 85px )
   .planet-tabs
     display: none
 
@@ -150,9 +152,9 @@ export default {
     padding-top: 50px
     .planet-tabs
       z-index: 10000000
-      position: fixed
+      position: absolute
       top: 0
-      width: 100vw
+      width: 97vw
       display: block
     .content .buttons-group
       display:  none
@@ -170,9 +172,9 @@ export default {
   @each $className, $object in $planetSizes
     .size-#{$className}
       max-width: map-get($object, 'width')
-      width:  map-get($object, 'size-xs')
+      width: map-get($object, 'size-sm')
       @include media-breakpoint-up($br-sm)
-        width: map-get($object, 'size-sm')
+        width:  map-get($object, 'size-xs')
   .content
     height: 100%
     width: 100%
@@ -210,7 +212,7 @@ export default {
       place-content: space-between
   @include media-breakpoint-up($br-md)
     grid-template-columns: 64.2% 35.8%
-    grid-template-rows: 80.3% 19.7%
+    grid-template-rows: 71.3% 19.7%
     row-gap: 26px
     .characteristics
       grid-area: 2/1/3/3
