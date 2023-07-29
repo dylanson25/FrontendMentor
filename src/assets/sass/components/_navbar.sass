@@ -114,19 +114,19 @@
                         &.active
                             border-bottom: 2px solid map-get($object, 'color' ) !important
 @include media-breakpoint-up($br-lg)
-.header
-    width: 100%
-    padding: 0px 32px
-.nabvar
-    border-bottom: 1px solid rgba(#fff ,0.10 )
-    .header-title
-        width: auto
-    .navbar-collapse
-        width: 665px
-        height: 100%
-        .navbar-nav
-            @each $className, $object in $colors
-                .nav-item.is-#{$className}
-                    &.active
-                        border-top: 2px solid map-get($object, 'color' ) !important
-                        border-bottom: none !important
+    .header
+        width: 100%
+        padding: 0px 32px
+    .nabvar
+        border-bottom: 1px solid rgba(#fff ,0.10 )
+        .header-title
+            width: auto
+        .navbar-collapse
+            width: 665px
+            height: 100%
+            .navbar-nav
+                @each $className, $object in $colors
+                    .nav-item.is-#{$className}
+                        &.active
+                            border-top: 2px solid map-get($object, 'color' ) !important
+                            border-bottom: none !important

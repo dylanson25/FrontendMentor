@@ -44,9 +44,12 @@ export default {
       planetRoutes.value = routes.filter(
         (route) => route.meta?.type === "planetView"
       );
+      if (width.value >= 767.98) show.value = true;
+      else show.value = false;
     });
     watch(width, (value) => {
       if (value >= 767.98) show.value = true;
+      else show.value = false;
     });
     return {
       planetRoutes,
@@ -71,8 +74,9 @@ export default {
     height: 510px
   100%
     height: 0px
-.collapse-enter-active
-  animation: collapse-in 1s ease
-.collapse-leave-active
-  animation: collapse-out 1s ease-out
+@include media-breakpoint-down($br-sm)
+  .collapse-enter-active
+    animation: collapse-in 1s ease
+  .collapse-leave-active
+    animation: collapse-out 1s ease-out
 </style>

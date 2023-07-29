@@ -138,9 +138,10 @@ export default {
   position: relative
   grid-template-rows: minmax(304px, auto) repeat(2, auto)
   grid-template-columns: 100%
-  min-height: 100vh
+  min-height: calc( 100vh - 70px )
   padding: 24px
   padding-top: 0
+  margin: 0 auto
   place-content: center
   place-items: center
   row-gap: 27px
@@ -149,6 +150,7 @@ export default {
     display: none
 
   @include media-breakpoint-down($br-xs)
+    width: 100%
     padding-top: 50px
     .planet-tabs
       z-index: 10000000
@@ -162,12 +164,12 @@ export default {
     position: relative
     .marker-planet-img
       position: absolute
-      top: 70%
-      width: 40%
-      left: calc( 50% - 20% )
+      top: 60%
+      width: 33%
+      left: calc( 50% - 16.5% )
       @include media-breakpoint-down($br-xs)
-        width: 65%
-        left: calc( 50% - 32.5% )
+        width: 45%
+        left: calc( 50% - 22.5% )
 
   @each $className, $object in $planetSizes
     .size-#{$className}
@@ -212,12 +214,16 @@ export default {
       place-content: space-between
   @include media-breakpoint-up($br-md)
     grid-template-columns: 64.2% 35.8%
-    grid-template-rows: 71.3% 19.7%
+    grid-template-rows: 592.33px 125.6px
+    min-height: calc(100vh - 128px)
+    // grid-template-rows: 71.3% 19.7%
     row-gap: 26px
     .characteristics
       grid-area: 2/1/3/3
   @include media-breakpoint-up($br-lg)
+    row-gap: 5vh
     .characteristics
+      align-self: flex-end
       grid-template-columns: repeat(auto-fit, minmax(130px, calc(25% - 23px)))
       column-gap: 30px
 </style>
